@@ -1,0 +1,25 @@
+.btn-circle-3d-dent {
+  display: inline-block;
+  text-decoration: none;
+  background: #5dc3d0;
+  color: #528e96;
+  width: 182px;
+  font-size: 20px;
+  height: 180px;
+  line-height: 180px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: inset 0px 3px 0 rgba(255, 255, 255, 0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  border-bottom: solid 3px #549fa9;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+  transition: 0.4s;
+}
+
+.btn-circle-3d-dent:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+  border-bottom: none;
+}
+
