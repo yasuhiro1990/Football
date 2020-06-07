@@ -6,7 +6,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>アカウントページ</h2>
             <div class="row">
                 <div class="d-flex flex-row">
                 @foreach($posts as $acount)
@@ -16,7 +15,6 @@
                         </div>
                     @endif
                         <div class="pt-5 col-12 text-center">
-                            
                             <label class="h1">{{$acount->team}}</label>
                         </div>
                 </div>
@@ -51,41 +49,36 @@
                             <td class="pl-3">{{$acount->day}}</td>
                         </tr>
                     </table>
-                    
-                    
                 </div>
                 <div class="d-flex flex-row col-8 text-center pt-5 mx-auto">
                         <!--お気に入り登録-->
-                        <div class="row col-4 mx-auto justify-content-center btn-block">
+                        <div class="row col-4 mx-auto d-flex justify-content-center btn-block">
                             @if($fav == null)
                             <form action="{{action('Admin\FavoriteController@postHoge',['id'=>$acount->id])}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <button class="btn-circle-3d-dent" type="submit" name="fav" value="fav">お気に入り</button>
+                                <button class="btn-gradient-3d-orange" type="submit" name="fav" value="fav" id="hope">お気に入り</button>
                             </form>
                             @else
                             <form action="{{action('Admin\FavoriteController@postHoge',['id'=>$acount->id])}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <button class="btn-circle-3d-dent" width=100% type="submit" name="fav" value="fav">お気に入り解除</button>
+                                <button class="btn-gradient-3d-orange" width=100% type="submit" name="fav" value="fav">お気に入り解除</button>
                             </form>
                             @endif
                         </div>
                         
                         <!--試合したい登録-->
-                         <div class="row col-4 mx-auto justify-content-center btn-block mt-0">
+                         <div class="row col-4 mx-auto d-flex justify-content-center btn-block mt-0" id="game">
                             @if($game == null)
-                            <form action="{{action('Admin\FavoriteController@postHoge',['id'=>$acount->id])}}" method="post" enctype="multipart/form-data">
+                            <form name="game_submit" action="{{action('Admin\FavoriteController@postHoge',['id'=>$acount->id])}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <button class="btn-circle-3d-dent" type="submit" name="game" value="game">試合がしたい</button>
+                                <button class="btn-gradient-3d-simple" type="submit" name="game" value="game">試合がしたい</button>
                             </form>
                             @else
-                        
-                               
-                                <button class="btn-circle-3d-dent" disabled type="button" data-loading-text="申込済み" autocomplete="off">申込済み</button>
-                           
+                                <button class="btn-gradient-3d-simple" disabled type="button" data-loading-text="申込済み" autocomplete="off">申込済み</button>
                             @endif
                         </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

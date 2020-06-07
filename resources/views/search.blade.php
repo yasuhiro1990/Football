@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-md-12 pt-3">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="検索">
+                            <input type="submit" class="btn btn-primary" value="検索" class="searches">
                         </div>
                     </div>
                 </form>
@@ -51,6 +51,7 @@
         <div class="row">
             <div class="list-news col-12 mx-auto pt-5">
                 @if($posts !=null)
+               
                 <div class="posts row">
                    
                         @foreach($posts as $acount)
@@ -73,10 +74,11 @@
                      
                 </div>
                    
-                    <div class="paginate pt-3 mx-auto col-6 d-flex justify-content-center">
-                        {{$posts->links()}}
-                    </div>  
+                    
                 @endif
+                <div class="paginate pt-3 mx-auto col-6 d-flex justify-content-center">
+                        {{$posts->appends(request()->input())->links()}}
+                </div> 
             </div>
         </div>
     </div>

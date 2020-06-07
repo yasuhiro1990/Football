@@ -6,20 +6,19 @@
 @section('content')
     <div class="container">
         <div class="row">
-            
             <div class="row">
-                <div class="d-flex flex-row col-12">
+                <div class="d-flex flex-row">
                 @foreach($posts as $acount)
                     @if($acount->image_path)    
-                        <div class="col-10 col-md-6 pl-4">
+                        <div class="col-8">
                             <img src="{{asset('storage/image/' . $acount->image_path)}}" width="200" height="200">
                         </div>
                     @endif
-                    <div class="pt-5 col-6 col-md-4 text-center">
+                    <div class="pt-5 col-12 text-center">
                         <label class="h1">{{$acount->team}}</label>
                     </div>
                 </div>
-            </div>
+            
                 <div class="col-12 pt-5">
                     <div class="col-4 pb-3 float-right text-right mr-5">
                         <a href="{{action('Admin\AcountController@edit')}}" type="button" class="btn btn-info text-center px-3">編集</a>
@@ -60,30 +59,29 @@
                     </table>
                 </div>
                 @endforeach
-            </div>
-            <!--お気に入り-->
-            <div class="row pt-5">
-                <label class="h3">お気に入りチーム</label>
-                @if($fav!=null)
-                <div class="col-12 border">
-                    @foreach($fav as $favs)
-                        <a href="{{action('Admin\AcountController@yourpage',['id'=>$favs->fav_id]  )}}">{{$favs->team}}</a>
-                    @endforeach
+                <!--お気に入り-->
+                <div class="pt-5 col-12">
+                    <label class="h3">お気に入りチーム</label>
+                    @if($fav!=null)
+                    <div class="col-12 border">
+                        @foreach($fav as $favs)
+                            <a href="{{action('Admin\AcountController@yourpage',['id'=>$favs->fav_id]  )}}">{{$favs->team}}<br></a>
+                        @endforeach
+                    </div>
+                    @endif
                 </div>
-                @endif
-            </div>
-            <!--試合応募済み-->
-            <div class="row pt-5">
-                <label class="h3">試合応募済みチーム</label>
-                @if($game!=null)
-                <div class="col-12 border">
-                    @foreach($game as $games)
-                        <a href="{{action('Admin\AcountController@yourpage',['id'=>$games->game_id]  )}}">{{$games->team}}</a>
-                    @endforeach
+                <!--試合応募済み-->
+                <div class="pt-5 col-12">
+                    <label class="h3">試合応募済みチーム</label>
+                    @if($game!=null)
+                    <div class="col-12 border">
+                        @foreach($game as $games)
+                            <a href="{{action('Admin\AcountController@yourpage',['id'=>$games->game_id]  )}}">{{$games->team}}<br></a>
+                        @endforeach
+                    </div>
+                    @endif
                 </div>
-                @endif
             </div>
-            
         </div>
     </div>
 @endsection

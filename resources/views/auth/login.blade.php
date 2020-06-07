@@ -1,5 +1,7 @@
 @extends('layouts.header')
 
+@section('title', 'ログイン画面')
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -58,7 +60,7 @@
                             </div>
                         </form>
                         <div class="form-group row mb-0">
-                            <a href="{{'password/reset'}}">パスワードを忘れた方はこちら</a>
+                            <a class="text-light" href="{{'password/reset'}}">パスワードを忘れた方はこちら</a>
                         </div>
                     </div>
                 </div>

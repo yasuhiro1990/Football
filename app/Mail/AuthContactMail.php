@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactMail extends Mailable
+class AuthContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,12 +17,12 @@ class ContactMail extends Mailable
      * @return void
      */
     
-    protected $contact;
+    protected $acount;
     
-    public function __construct($contact)
+    public function __construct($acount)
     {
         //
-        $this->contact=$contact;
+        $this->acount=$acount;
         
     }
 
@@ -37,6 +37,6 @@ class ContactMail extends Mailable
         ->from('higuain20@hotmail.co.jp')//送信元
         ->subject('試合がしたい')//標題タイトル
         ->view('mail.contact')//メッセージテンプレ
-        ->with(['contact'=>$this->contact]);
+        ->with(['acount'=>$this->acount]);
     }
 }

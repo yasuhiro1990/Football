@@ -16,6 +16,7 @@ use Carbon\Carbon;
 use Log;
 // 作成したメールクラスをuseする
 use App\Mail\ContactMail;
+use App\Mail\AuthContactMail;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -69,6 +70,7 @@ class FavoriteController extends Controller
         
         $acount=Acount::find($id);
         $user=Auth::user();
+        $auth=Acount::find($user->id);
         $game=new Game;
         $game->game_id=$acount->id;
         $game->user_id=$user->id;
@@ -80,13 +82,10 @@ class FavoriteController extends Controller
         $game->introduce=$acount->introduce;
         $game->image_path=$acount->image_path;
         $game->day=$acount->day;
-         Mail::to($acount->email)
-                ->send(new ContactMail($acount));
+        Mail::to($acount->email)
+            ->send(new ContactMail($auth));
         
         $game->save();
-        
-       
-
        
     }
     

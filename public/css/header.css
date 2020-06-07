@@ -1,9 +1,101 @@
 @charset "UTF-8";
 
+/*840以下*/
+
+@media screen and (max-width: 768px) {
+  .navbar-laravel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  #app {
+    padding-top: 90px !important;
+  }
+
+  .navbar-laravel {
+    padding: 0;
+    background-color: #9e9e9e;
+  }
+
+  .nav-laravel {
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  .nav-laravel button {
+    padding-left: 10px;
+  }
+
+  .navbar-toggler {
+    border: solid 1px;
+  }
+
+  .nav-contents {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .humbuger {
+    width: 100vw;
+    height: 50vh;
+    background-color: #9e9e9ecc;
+  }
+
+  .humbuger li {
+    padding: 5px 10px;
+    width: 50%;
+    border-left: inset 5px white;
+    border-bottom: inset 5px white;
+  }
+
+  .humbuger li a {
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-laravel {
+    height: 100%;
+    display: block;
+  }
+
+  .humbuger li {
+    width: 25%;
+    text-align: center;
+    height: 90px;
+    border: outset 3px;
+    position: relative;
+  }
+
+  .humbuger li a {
+    position: absolute;
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 90px;
+  }
+
+  .humbuger li a:hover {
+    text-decoration: none;
+    background-color: yellow;
+  }
+}
+
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #3F6;
+  background-color: #52af4c8f;
   color: black;
 }
 
@@ -12,8 +104,9 @@ body {
 }
 
 .navbar-laravel {
-  background-color: #000;
+  background-color: #9e9e9e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  height: 90px;
 }
 
 .navbar-brand {
@@ -22,6 +115,10 @@ body {
 
 .nav-link {
   color: #fff !important;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .table-dark {

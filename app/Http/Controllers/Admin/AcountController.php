@@ -106,12 +106,12 @@ class AcountController extends Controller
         $cond_day2=$request->cond_day2;
         $cond_city=$request->cond_city;
         $cond_hope_game=$request->cond_hope_game;
-        
+        $posts=null;
         $cond_posts=Acount::query();
         $free=$request->free;
-        if($cond_day =='' && $cond_day2 == '' && $cond_hope_game=='選択してください' && $cond_city =='選択してください' && $free ==''){
-            $posts=null;
-        }else{
+        // if($cond_day =='' && $cond_day2 == '' && $cond_hope_game=='選択してください' && $cond_city =='選択してください' && $free ==''){
+            
+        // }else{
             
         
             if($cond_day !=''){
@@ -146,7 +146,8 @@ class AcountController extends Controller
             
             $posts=$cond_posts->paginate(5);
             
-        }
+            Log::debug($posts);
+        // }
         return view('search',['posts'=>$posts,'cond_day'=>$cond_day,'cond_day2'=>$cond_day2,'prets'=>$prets,'hopes'=>$hopes]);
     }
     
