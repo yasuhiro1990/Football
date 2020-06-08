@@ -11,7 +11,7 @@
                 @foreach($posts as $acount)
                     @if($acount->image_path)    
                         <div class="col-8">
-                            <img src="{{asset('storage/image/' . $acount->image_path)}}" width="200" height="200">
+                            <img src="{{ $acount->image_path}}" width="200" height="200">
                         </div>
                     @endif
                     <div class="pt-5 col-12 text-center">

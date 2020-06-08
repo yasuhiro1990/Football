@@ -59,7 +59,7 @@
                         <div class="row border border-white col-10 mt-3 mx-auto">
                             
                             <div class="col-12 d-flex flex-row">
-                                <a href="{{action('Admin\AcountController@yourpage',['id'=>$acount->id]  )}}"><img src="{{asset('storage/image/' . $acount->image_path)}}" width="150" height="150"></a>
+                                <a href="{{action('Admin\AcountController@yourpage',['id'=>$acount->id]  )}}"><img src="{{$acount->image_path}}" width="150" height="150"></a>
                                 <div class="col-9 mx-auto">
                                     <a href="{{action('Admin\AcountController@yourpage',['id'=>$acount->id]  )}}" class="h2 text-center">{{$acount->team}}</a>
                                     <div class="col-md-12 h6 pt-2">

@@ -14,6 +14,7 @@ use App\Favorite;
 use Auth;
 use Carbon\Carbon;
 use Log;
+use Storage;
 // 作成したメールクラスをuseする
 use App\Mail\ContactMail;
 use App\Mail\AuthContactMail;

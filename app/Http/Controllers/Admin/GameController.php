@@ -13,6 +13,7 @@ use Auth;
 use App\Game;
 use Carbon\Carbon;
 use Log;
+use Storage;
 
 class GameController extends Controller
 {

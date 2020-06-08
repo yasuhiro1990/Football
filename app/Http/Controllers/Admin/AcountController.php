@@ -15,6 +15,7 @@ use Auth;
 use Carbon\Carbon;
 use Log;
 use App\People;
+use Storage;
 
 
 class AcountController extends Controller
@@ -54,8 +55,8 @@ class AcountController extends Controller
         $people=new People;
         // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
       if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $acount->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $acount->image_path = Storage::disk('s3')->url($path);
       } else {
           
          $acount->image_path=basename('zGueDwQFbK0QSCFrQ0UCeKMoMxoX9HXbVsG0DXuK.png');
@@ -182,8 +183,8 @@ class AcountController extends Controller
         unset($acount_form['password_confirm']);
         
         if(isset($acount_form['image'])){
-            $path=$request->file('image')->store('public/image');
-            $acount->image_path=basename($path);
+            $path=$request->Storage::disk('s3')->putFile('/',$acount_form['image'],'public');
+            $acount->image_path=Storage::disk('s3')->url($path);
             unset($acount_form['image']);
         }elseif(isset($request->remove)){
             unset($form['remove']);
