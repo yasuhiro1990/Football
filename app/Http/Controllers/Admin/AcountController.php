@@ -58,7 +58,7 @@ class AcountController extends Controller
         $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
         $acount->image_path = Storage::disk('s3')->url($path);
       } else {
-         $acount->image_path=url('hKiQouistDh92TgGIShgQ2FJWjpLwYUziEHmRgSw.png');
+         $acount->image_path=url('https://footballs.s3.us-east-2.amazonaws.com/hKiQouistDh92TgGIShgQ2FJWjpLwYUziEHmRgSw.png');
       }
 
       // フォームから送信されてきた_tokenを削除する
