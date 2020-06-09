@@ -59,7 +59,7 @@ class AcountController extends Controller
         $acount->image_path = Storage::disk('s3')->url($path);
       } else {
           
-         $acount->image_path=basename('zGueDwQFbK0QSCFrQ0UCeKMoMxoX9HXbVsG0DXuK.png');
+         $acount->image_path=basename('hKiQouistDh92TgGIShgQ2FJWjpLwYUziEHmRgSw.png');
       }
 
       // フォームから送信されてきた_tokenを削除する
