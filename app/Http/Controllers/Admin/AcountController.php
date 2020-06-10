@@ -182,13 +182,12 @@ class AcountController extends Controller
         unset($acount_form['password_confirm']);
         
         if(isset($acount_form['image'])){
-            $path=$request->Storage::disk('s3')->putFile('/',$acount_form['image'],'public');
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
             $acount->image_path=Storage::disk('s3')->url($path);
             unset($acount_form['image']);
         }elseif(isset($request->remove)){
-            unset($form['remove']);
+            unset($acount_form['remove']);
             $acount->image_path=url('https://footballs.s3.us-east-2.amazonaws.com/hKiQouistDh92TgGIShgQ2FJWjpLwYUziEHmRgSw.png');
-           
         }
             unset($acount_form['_token']);
             
