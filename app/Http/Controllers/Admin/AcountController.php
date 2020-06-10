@@ -182,7 +182,7 @@ class AcountController extends Controller
         unset($acount_form['password_confirm']);
         
         if(isset($acount_form['image'])){
-            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $path = Storage::disk('s3')->putFile('/',$acount_form['image'],'public');
             $acount->image_path=Storage::disk('s3')->url($path);
             unset($acount_form['image']);
         }elseif(isset($request->remove)){
