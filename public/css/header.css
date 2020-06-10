@@ -39,8 +39,9 @@
   }
 
   .humbuger {
+    padding-top: 30px;
     width: 100vw;
-    height: 50vh;
+    height: 70vh;
     background-color: #9e9e9ecc;
   }
 

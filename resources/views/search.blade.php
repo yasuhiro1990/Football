@@ -58,12 +58,12 @@
                    
                         <div class="row border border-white col-10 mt-3 mx-auto">
                             
-                            <div class="col-12 d-flex flex-row">
+                            <div class="col-12 d-flex flex-row sarch">
                                 <a href="{{action('Admin\AcountController@yourpage',['id'=>$acount->id]  )}}"><img src="{{$acount->image_path}}" width="150" height="150"></a>
-                                <div class="col-9 mx-auto">
+                                <div class="col-5 mx-auto">
                                     <a href="{{action('Admin\AcountController@yourpage',['id'=>$acount->id]  )}}" class="h2 text-center">{{$acount->team}}</a>
                                     <div class="col-md-12 h6 pt-2">
-                                        <p>{{\Str::limit($acount->introduce,50)}}</p>
+                                        <p>{{\Str::limit($acount->introduce,25)}}</p>
                                     </div>
                                 </div>
                             </div>

@@ -34,7 +34,8 @@
         <link href="{{ secure_asset('css/yourpage.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/first.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/footer.css') }}" rel="stylesheet">
-        
+        <link href="{{ secure_asset('css/search.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/mypage.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -93,7 +94,6 @@
                         <li class="nav-item center"><a href="{{action('Admin\AcountController@search')}}">チーム検索</a></li>
                         <li class="nav-item"><a href="#app">▲</a></li>
                     </ul>
-               
                 <div class="clearfix"></div>
             </div>
         </footer>

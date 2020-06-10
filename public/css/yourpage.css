@@ -57,3 +57,7 @@
   border-bottom: none;
 }
 
+.yourbox {
+  word-wrap: break-word;
+}
+

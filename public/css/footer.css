@@ -1,20 +1,25 @@
 footer {
   background-color: black;
-  text-align:center;
-  height:50px;
-  width:auto;
+  text-align: center;
+  height: 50px;
+  width: auto;
 }
-.footer-link{
-    display:inline;
+
+.footer-link {
+  display: inline;
 }
-footer ul li a{
-    color:white;
-    padding:5px;
+
+footer ul li a {
+  color: white;
+  padding: 5px;
 }
-footer ul li{
-    display:inline;
+
+footer ul li {
+  display: inline;
 }
-.center{
-    border-left:ridge 4px white;
-    border-right:ridge 4px white;
+
+.center {
+  border-left: ridge 4px white;
+  border-right: ridge 4px white;
 }
+

@@ -7,19 +7,16 @@
     <div class="container">
         <div class="row">
             <div class="row">
-                <div class="d-flex flex-row">
+                <div class="col-12 flex-row">
                 @foreach($posts as $acount)
                     @if($acount->image_path)    
-                        <div class="col-8">
+                        <div class="text-center">
                             <img src="{{ $acount->image_path}}" width="200" height="200">
                         </div>
                     @endif
-                    <div class="pt-5 col-12 text-center">
-                        <label class="h1">{{$acount->team}}</label>
-                    </div>
                 </div>
             
-                <div class="col-12 pt-5">
+                <div class="col-12 pt-5 mybox">
                     <div class="col-4 pb-3 float-right text-right mr-5">
                         <a href="{{action('Admin\AcountController@edit')}}" type="button" class="btn btn-info text-center px-3">編集</a>
                     </div>
@@ -60,7 +57,7 @@
                 </div>
                 @endforeach
                 <!--お気に入り-->
-                <div class="pt-5 col-12">
+                <div class="pt-5 col-12 mybox">
                     <label class="h3">お気に入りチーム</label>
                     @if($fav!=null)
                     <div class="col-12 border">
@@ -71,7 +68,7 @@
                     @endif
                 </div>
                 <!--試合応募済み-->
-                <div class="pt-5 col-12">
+                <div class="pt-5 col-12 mybox">
                     <label class="h3">試合応募済みチーム</label>
                     @if($game!=null)
                     <div class="col-12 border">

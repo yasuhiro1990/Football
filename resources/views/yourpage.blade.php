@@ -7,18 +7,15 @@
     <div class="container">
         <div class="row">
             <div class="row">
-                <div class="d-flex flex-row">
+                <div class="col-12 flex-row">
                 @foreach($posts as $acount)
                     @if($acount->image_path)    
-                        <div class="col-8">
+                        <div class="text-center">
                             <img src="{{$acount->image_path}}" width="200" height="200">
                         </div>
                     @endif
-                        <div class="pt-5 col-12 text-center">
-                            <label class="h1">{{$acount->team}}</label>
-                        </div>
                 </div>
-                <div class="col-12 pt-5">
+                <div class="col-12 pt-5 yourbox">
                     <table border="1" class="col-10 justify-content-center mx-auto">
                         <tr>
                             <td width="150" class="py-3 text-center">チーム名</td>
@@ -50,9 +47,9 @@
                         </tr>
                     </table>
                 </div>
-                <div class="d-flex flex-row col-8 text-center pt-5 mx-auto">
+                <div class="d-md-flex flex-row col-8 text-center pt-5 mx-auto">
                         <!--お気に入り登録-->
-                        <div class="row col-4 mx-auto d-flex justify-content-center btn-block">
+                        <div class="row col-md-4 mx-auto d-flex justify-content-center btn-block">
                             @if($fav == null)
                             <form action="{{action('Admin\FavoriteController@postHoge',['id'=>$acount->id])}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
@@ -67,7 +64,7 @@
                         </div>
                         
                         <!--試合したい登録-->
-                         <div class="row col-4 mx-auto d-flex justify-content-center btn-block mt-0" id="game">
+                         <div class="row col-md-4 mx-auto d-flex justify-content-center btn-block mt-0" id="game">
                             @if($game == null)
                             <form name="game_submit" action="{{action('Admin\FavoriteController@postHoge',['id'=>$acount->id])}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
