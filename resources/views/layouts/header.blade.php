@@ -43,11 +43,10 @@
             <!--{{-- 画面上部に表示するナビゲーションバーです。 --}}-->
             <nav class="navbar navbar-expand-md navbar-laravel">
                 <div class="container nav-laravel">
-                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Togglenavigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
-                    <div class="collapse navbar-collapse collapsed nav-contents" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse nav-contents" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto col-md-12 humbuger">
                             <li><a href="{{action('Admin\AcountController@home')}}" >ホーム</a></li>
