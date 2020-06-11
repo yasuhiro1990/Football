@@ -6,7 +6,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="row">
                 <div class="col-12 flex-row">
                 @foreach($posts as $acount)
                     @if($acount->image_path)    
@@ -16,10 +15,10 @@
                     @endif
                 </div>
                 <div class="col-12 pt-5 yourbox">
-                    <table border="1" class="col-10 justify-content-center mx-auto">
+                    <table border="1" class="col-10 justify-content-center mx-auto" style="table-layout:fixed;width:100%;">
                         <tr>
-                            <td width="150" class="py-3 text-center">チーム名</td>
-                            <td width="250" class="pl-3">{{$acount->team}}</td>
+                            <td width="40%" class="py-3 text-center">チーム名</td>
+                            <td width="60%" class="pl-3">{{$acount->team}}</td>
                         </tr>
                         <tr>
                             <td class="text-center py-3 ">地域</td>
@@ -77,6 +76,5 @@
                     @endforeach
                 </div>
             </div>
-        </div>
     </div>
 @endsection

@@ -86,9 +86,8 @@
                 <!--{{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}-->
                 @yield('content')
             </main>
-        </div>
-       <footer>
-            <div class="d-flex justify-content-center align-items-center" style="height:50px;">
+            <footer style="width:100%;">
+            <div class="d-flex justify-content-center align-items-center container" style="height:50px;">
                     <ul class="navbar-nav footer-link">
                         <li class="nav-item"><a href="{{action('Admin\AcountController@home')}}" >ホーム</a></li>
                         <li class="nav-item center"><a href="{{action('Admin\AcountController@search')}}">チーム検索</a></li>
@@ -96,6 +95,8 @@
                     </ul>
                 <div class="clearfix"></div>
             </div>
-        </footer>
+            </footer> 
+        </div>
+      
     </body>
 </html>
