@@ -17,7 +17,7 @@
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="{{ secure_asset('js/yourpage.js') }}"></script>  
-        
+        <script src="{{ secure_asset('js/header.js') }}"></script> 
   
      
         
@@ -41,25 +41,25 @@
         <div id="app">
             <!--<div class="clearfix"></div>-->
             <!--{{-- 画面上部に表示するナビゲーションバーです。 --}}-->
-            <nav class="navbar navbar-expand-md navbar-laravel">
+            <nav class="navbar navbar-expand-md navbar-laravel navbar-light">
                 <div class="container nav-laravel">
-                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Togglenavigation">
+                   <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#menuModal" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse nav-contents" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto col-md-12 humbuger">
-                            <li><a href="{{action('Admin\AcountController@home')}}" >ホーム</a></li>
-                            <li><a href="{{action('Admin\AcountController@search')}}">チーム検索</a></li>
+                    <div class="collapse navbar-collapse nav-contents">
+                         <!--Left Side Of Navbar -->
+                        <ul class="navbar-nav col-md-12 humbuger">
+                            <li class="nav-item"><a href="{{action('Admin\AcountController@home')}}" >ホーム</a></li>
+                            <li class="nav-item"><a href="{{action('Admin\AcountController@search')}}">チーム検索</a></li>
                             <!--新規登録-->
                             @guest
-                                <li><a href="{{action('Admin\AcountController@create')}}">新規登録</a></li>
+                                <li class="nav-item"><a href="{{action('Admin\AcountController@create')}}">新規登録</a></li>
                             <!--マイページ表示-->
                             @else
-                                <li><a href="{{action('Admin\AcountController@index')}}">マイページ</a></li>
+                                <li class="nav-item"><a href="{{action('Admin\AcountController@index')}}">マイページ</a></li>
                             @endguest
                             @guest
-                                <li><a href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
+                                <li class="nav-item"><a href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
                             <!--{{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}-->
                             @else
                                 <li class="nav-item">
@@ -76,11 +76,52 @@
                                 </li>
                             @endguest
                         </ul>
+                        
                     </div>
                 </div>
             </nav>
             <!--{{-- ここまでナビゲーションバー --}}-->
-
+            <div class="modal fade fullscreen" id="menuModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">×</span>
+                                   </button>
+                              </div>
+                              <div class="modal-body">
+                                <ul style="list-style-type:none;">
+                                    <li class="nav-item"><a href="{{action('Admin\AcountController@home')}}" >ホーム</a></li>
+                                    <li class="nav-item"><a href="{{action('Admin\AcountController@search')}}">チーム検索</a></li>
+                            <!--新規登録-->
+                                @guest
+                                    <li class="nav-item"><a href="{{action('Admin\AcountController@create')}}">新規登録</a></li>
+                            <!--マイページ表示-->
+                                @else
+                                    <li class="nav-item"><a href="{{action('Admin\AcountController@index')}}">マイページ</a></li>
+                                @endguest
+                                @guest
+                                    <li class="nav-item"><a href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
+                            <!--{{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}-->
+                                @else
+                                    <li class="nav-item">
+                                        <div>
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                {{ __('messages.Logout') }}
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                    @endguest
+                                </ul>
+                              </div>
+                            </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                        </div><!-- /.fullscreen -->
             <main class="py-4">
                 <!--{{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}-->
                 @yield('content')
