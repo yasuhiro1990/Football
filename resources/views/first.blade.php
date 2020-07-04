@@ -9,7 +9,7 @@
             
             <div class="col-12">
                 <div class="col-12">
-                    <img src="https://footballs.s3.us-east-2.amazonaws.com/futsal.png" alt="マッチングフットサル" width="100%" height="300">
+                    <img src="https://footballs.s3.us-east-2.amazonaws.com/futsal.png" alt="マッチングフットサル" width="100%" height="100%">
                 </div>
                 <div class="pt-5 col-12 menu">
                     <div class="d-md-flex justify-content-center">

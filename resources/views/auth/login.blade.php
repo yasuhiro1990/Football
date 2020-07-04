@@ -63,6 +63,19 @@
                             <a class="text-light" href="{{'password/reset'}}">パスワードを忘れた方はこちら</a>
                         </div>
                     </div>
+                    <table border="1">
+                        <tr>
+                            <td>テスト用</td>
+                        </tr>
+                        <tr>
+                            <td>メールアドレス</td>
+                            <td>sample@info.jp</td>
+                        </tr>
+                        <tr>
+                            <td>パスワード</td>
+                            <td>sample01</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
